@@ -985,16 +985,129 @@
      <div class="menu-section-bg"></div>
      <div class="menu-header">SETTINGS</div>
      <div class="menu-sketches-buttons">
-
-					<button class="menu-button tippy" onclick="resetSettings();" data-title="Reset Settings">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+      <button
+       class="menu-button tippy"
+       onclick="resetSettings();"
+       data-title="Reset Settings">
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-refresh-cw">
+        <polyline points="23 4 23 10 17 10"></polyline>
+        <polyline points="1 20 1 14 7 14"></polyline>
+        <path
+         d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+       </svg>
       </button>
-					<input id="file-input-settings" type="file" name="name" style="display: none;" multiple onchange="importSettings(this.files);" onclick="this.value=null;" />
-					<button class="menu-button tippy" onclick="importSettingsDialog();" data-title="Import Settings">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+      <input
+       id="file-input-settings"
+       type="file"
+       name="name"
+       style="display: none"
+       multiple
+       onchange="importSettings(this.files);"
+       onclick="this.value=null;" />
+      <button
+       class="menu-button tippy"
+       onclick="importSettingsDialog();"
+       data-title="Import Settings">
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-upload">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+       </svg>
       </button>
-					<button class="menu-button tippy" onclick="exportSettings();" data-title="Export Settings">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      <button
+       class="menu-button tippy"
+       onclick="exportSettings();"
+       data-title="Export Settings">
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-download">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+       </svg>
+      </button>
+      <button
+       class="menu-button tippy"
+       onclick="loadAllSketches();"
+       data-title="Reload sketches from disk">
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
+       </svg>
+      </button>
+      <button
+       class="menu-button tippy"
+       onclick="clearSketches();"
+       data-title="Clear sketches">
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-slash">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+       </svg>
+      </button>
+      <button
+       class="menu-button tippy"
+       onclick="saveAllSketches();"
+       data-title="Save all to disk">
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19" />
+        <polyline points="19 12 12 19 5 12" />
+       </svg>
       </button>
      </div>
      <div class="menu-settings menu-contents">
@@ -4776,6 +4889,81 @@ function println(msg){
 
     settings.backup.last = new Date().getTime();
     updateSettings();
+   }
+
+   function saveAllSketches() {
+    let tempSketches = exportSketchesPrepare();
+    let tempPath = '/saveAll';
+    let request = new XMLHttpRequest();
+    request.open('POST', tempPath, true);
+    request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    request.send(JSON.stringify(tempSketches));
+   }
+
+   function loadAllSketches() {
+    let request = new XMLHttpRequest();
+    request.open('GET', '/loadAll', true);
+    request.send();
+    request.addEventListener('load', function () {
+     let jsonObj = JSON.parse(request.responseText);
+     console.log(jsonObj);
+     let jsonStructure = jsonObj;
+     initSortable();
+     jsonStructure.forEach(function (jsonItem) {
+      if (jsonItem.mod === undefined) {
+       jsonItem.mod = timeDate();
+      }
+      if (
+       jsonItem.type == 'folder' &&
+       (jsonItem.name.toLowerCase() != 'demos' ||
+        searchJSON(settings.sketches, 'name', 'demos').length == 0)
+      ) {
+       // foreach folder/sketch check duplicates and give unique names
+
+       // each base folder
+       if (searchSketches(jsonItem.name, settings.sketches)) {
+        jsonItem.name += '_' + timeStamp(); //versionCheck(jsonItem.name);
+       }
+
+       // each recursive sketch/folder within
+       recursiveNamecheck(jsonItem.contents, jsonObj);
+
+       // add structure to top of sketches list
+       settings.sketches.unshift({
+        type: 'folder',
+        name: jsonItem.name,
+        mod: jsonItem.mod,
+        toggle: 'collapse',
+        contents: jsonItem.contents,
+       });
+      } else if (jsonItem.type == 'sketch') {
+       settings.sketches.unshift({
+        type: 'sketch',
+        name: jsonItem.name,
+        mod: jsonItem.mod,
+       });
+      }
+     });
+
+     const addDirSketchCode = (content) => {
+      for (const item of content) {
+       console.log(item.name, item.type);
+       if (item.type === 'sketch') {
+        console.log(item);
+        localStorage.setItem(item.name, item.code);
+        loadSketch(item.name);
+       }
+       if (item.type === 'folder') {
+        addDirSketchCode(item.contents);
+       }
+      }
+     };
+
+     addDirSketchCode(jsonStructure);
+     updateSettings();
+     initSortable();
+     updateSketches();
+    });
    }
 
    // load top sketch

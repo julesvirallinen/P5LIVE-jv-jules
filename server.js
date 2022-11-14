@@ -1,4 +1,8 @@
 'use strict';
+
+const { loadAll } = require('./src/loadFiles.js');
+const { save } = require('./src/saveFiles.js');
+
 let online = false; // set online
 let debugStats = false; // report stats
 let developBranch = false; // dev mode (false for production)
@@ -294,6 +298,29 @@ if (!online) {
  app.get('/fancy', express.json({ type: '*/*' }), (req, res) => {
   res.send('fancy');
  });
+
+ app.post(
+  '/saveAll',
+  express.json({ limit: '5mb', type: '*/*' }),
+  (req, res) => {
+   let sketches = req.body.sketches;
+   let dir = './_sketches';
+   !fs.existsSync(dir) && fs.mkdirSync(dir);
+   for (let sketch of sketches.structure) {
+    save(sketch, dir);
+   }
+  }
+ );
+
+ app.get(
+  '/loadAll',
+  express.json({ limit: '5mb', type: '*/*' }),
+  (req, res) => {
+   let dir = './_sketches';
+   const sketches = loadAll(dir);
+   res.json(sketches);
+  }
+ );
 }
 
 io.set('transports', ['websocket']);
