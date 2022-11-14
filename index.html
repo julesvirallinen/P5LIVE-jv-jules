@@ -3728,7 +3728,7 @@ function println(msg){
       loaderSub.innerHTML = 'loading snippets...';
       loadKeybindings();
       setEditorCommands();
-      let snippetsPath = 'data/P5L_snippets.json?' + currentRevision;
+      let snippetsPath = 'data/snippets/P5L_snippets.json?' + currentRevision;
       return fetch(snippetsPath);
      })
      .then((res) => res.json())

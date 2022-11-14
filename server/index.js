@@ -30,6 +30,7 @@ const express = require('express'),
  https = require('https'),
  fs = require('fs'),
  pem = require('pem'),
+ path = require('path'),
  httpProxy = require('http-proxy');
 
 // HTTPS
@@ -256,7 +257,8 @@ app.get('/', function (req, res) {
  if (online && !developBranch) {
   res.redirect('https://teddavis.org/p5live');
  } else {
-  res.sendFile(__dirname + '/index.html');
+  let indexPath = path.join(__dirname, '..', 'index.html');
+  res.sendFile(indexPath);
 
   let ccRaw = req.query.cc; // get namespaces
   if (ccRaw != null && ccRaw.length == 5) {
