@@ -141,7 +141,7 @@ hr{
 	outline:none;
 	border:none;
 	box-sizing: border-box;
-	color:#fff;
+	/* color:#fff; */
 	margin: 0;
 	will-change: opacity;
 }
