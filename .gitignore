@@ -11,4 +11,6 @@
 /electronjs
 /_stats
 /_backups
-
+_sketches
+.htaccess
+settings.json
