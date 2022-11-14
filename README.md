@@ -257,7 +257,7 @@ For examples, see `DEMOS` » `_CANVAS` » `_canvas_chalkboard` + `..._animation`
 
 ### SNIPPETS
 
-Add custom snippets to '/includes/demos/P5L_snippets.json'.  
+Add custom snippets to '/data/P5L_snippets.json'.  
 Load snippet via custom shortcut, `CTRL + SHIFT + key`
 
 - `CTRL + SHIFT + A`, adds audio-reactive code.
