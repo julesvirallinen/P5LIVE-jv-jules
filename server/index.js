@@ -257,7 +257,7 @@ app.get('/', function (req, res) {
  if (online && !developBranch) {
   res.redirect('https://teddavis.org/p5live');
  } else {
-  let indexPath = path.join(__dirname, '..', 'index.html');
+  let indexPath = path.join(__dirname, '..', 'public', 'index.html');
   res.sendFile(indexPath);
 
   let ccRaw = req.query.cc; // get namespaces
