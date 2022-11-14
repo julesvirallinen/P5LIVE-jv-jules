@@ -1,7 +1,7 @@
 'use strict';
 
-const { loadAll } = require('./src/loadFiles.js');
-const { save } = require('./src/saveFiles.js');
+const { loadAll } = require('./libs/loadFiles.js');
+const { save } = require('./libs/saveFiles.js');
 
 let online = false; // set online
 let debugStats = false; // report stats
@@ -25,7 +25,7 @@ const express = require('express'),
  app = express(),
  server = require('http').createServer(app),
  io = require('socket.io')(server),
- RGA = online ? require('./js/rga.js') : require('./includes/js/rga.js'), // remove includes for online
+ RGA = online ? require('./js/rga.js') : require('../includes/js/rga.js'), // remove includes for online
  port = tPort,
  https = require('https'),
  fs = require('fs'),
@@ -33,7 +33,7 @@ const express = require('express'),
  httpProxy = require('http-proxy');
 
 // HTTPS
-const pemPath = './includes/ssl/pem';
+const pemPath = '../includes/ssl/pem';
 const portHTTPS = parseInt(tPort) + 1;
 
 if (useHTTPS) {
