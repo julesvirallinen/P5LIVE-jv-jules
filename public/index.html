@@ -1404,6 +1404,19 @@
       <div
        class="tippy-left"
        style="cursor: help"
+       data-title="Color behind lines of code">
+       Sketch opacity (master):
+       <input
+        type="number"
+        id="settings-usebg"
+        name="settings-bgOpacity"
+        value="settings-bgOpacity"
+        onchange="setBackgroundOpacity(this.value);" />
+       <div id="pickr" class="pickr"></div>
+      </div>
+      <div
+       class="tippy-left"
+       style="cursor: help"
        data-title="Set editor theme">
        Code Theme:
        <select
@@ -1740,6 +1753,7 @@ function println(msg){
     theme: 'ace/theme/gob',
     themeBG: '#011F2F',
     themeBGactive: true,
+    sketchOpacity: 0,
     refresh: true,
     chalkboard: {
      backgroundColor: '#00280A',
@@ -3472,6 +3486,7 @@ function println(msg){
        pcontents +
        '</span>';
      }
+     p5frame.setAttribute('opacity', '0.1');
     }
    }
 
@@ -3896,6 +3911,7 @@ function println(msg){
     loadTheme();
     loadBackup();
     themeBGactiveToggleUpdate();
+    updateBgOpacity();
     loadColorPicker();
     vex.defaultOptions.className = 'vex-theme-plain';
     legacySettings(); // update sketches from 1.0.2
@@ -7424,10 +7440,13 @@ function println(msg){
        newBG = rgb2hex(cols[0].trim(), cols[0].trim(), cols[0].trim());
       }
      }
+     console.log(settings.backgroundOpacity);
      if (sketchLoaded) {
       p5f.document.body.style.background = newBG;
+      p5frame.style.opacity = settings.backgroundOpacity;
      }
      p5frame.style.background = newBG;
+     p5frame.style.opacity = settings.backgroundOpacity;
     }
    }
 
@@ -7882,6 +7901,12 @@ function println(msg){
     themeBGactiveToggleUpdate();
    }
 
+   function setBackgroundOpacity(opacity) {
+    console.log(opacity);
+    settings.backgroundOpacity = opacity;
+    updateBgOpacity();
+   }
+
    function themeBGactiveToggleUpdate() {
     checkToggle(
      'themeBGactive',
@@ -7889,6 +7914,10 @@ function println(msg){
      settingsBGactive,
      'Code Background'
     );
+    editor.renderer.updateFull();
+   }
+   function updateBgOpacity() {
+    updateBackground();
     editor.renderer.updateFull();
    }
 
@@ -9950,6 +9979,11 @@ function println(msg){
     }
    }
   </script>
+  <!-- <script type="text/javascript" src="includes/js/maptastic.min.js"></script> -->
+  <!-- <script type="text/javascript">
+   new Maptastic('p5-frame');
+  </script> -->
+
   <div
    style="
     z-index: 100;
